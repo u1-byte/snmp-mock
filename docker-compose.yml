@@ -1,0 +1,17 @@
+services:
+  snmp-mock:
+    image: ghcr.io/0xdials/snmpmini:latest
+    container_name: snmp-mock
+    ports:
+      - "161:161/udp"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+
+  snmp-client:
+    build: ./go-client
+    container_name: snmp-client
+    depends_on:
+      - snmp-mock
+    env_file:
+      - .env

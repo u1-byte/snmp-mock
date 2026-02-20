@@ -1,0 +1,11 @@
+.env
+data/*
+!data/*.example
+go-client/snmp-client
+*.exe
+*.out
+*.app
+.DS_Store
+.vscode/
+.idea/
+*.swp
