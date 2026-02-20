@@ -9,16 +9,16 @@ By containerizing both the mock server and the client with Docker Compose, you c
 
 ```text
 .
-├── docker-compose.yml        # Orchestrates the mock server and Go client
-├── .env.example              # Template for environment variables (Safe to commit)
-├── .gitignore                # Prevents leaking secrets and real network data
+├── docker-compose.yml        
+├── .env.example              
+├── .gitignore                
 ├── data/
-│   └── test.snmpwalk.example # Example SNMP mock data file (Safe to commit)
+│   └── test.snmpwalk.example 
 └── go-client/
-    ├── Dockerfile            # Multi-stage build for the Go client
-    ├── go.mod                # Go module dependencies
-    ├── go.sum                # Go module checksums (ALWAYS commit this!)
-    └── main.go               # The actual Go SNMP polling logic
+    ├── Dockerfile            
+    ├── go.mod               
+    ├── go.sum                
+    └── main.go               
 ```
 
 ## ⚙️ Prerequisites
