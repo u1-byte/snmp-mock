@@ -3,8 +3,6 @@
 
 This project provides an isolated, local testing environment for SNMP. It uses a Python-based SNMP simulator (`snmpsim`) to mock network devices (like Cisco or Juniper routers) and a custom Go client to query that mock data using `BulkWalk`.
 
-By containerizing both the mock server and the client with Docker Compose, you can safely test SNMP polling logic without needing access to real, physical network hardware.
-
 ## 📂 Repository Structure
 
 ```text
@@ -33,8 +31,6 @@ By containerizing both the mock server and the client with Docker Compose, you c
 
 ### 1. Set Up Your Environment Variables
 
-We use a `.env` file to pass configuration into the Docker containers. Copy the provided `.env.example` template to create your active, git-ignored `.env` file:
-
 ```bash
 cp .env.example .env
 ```
@@ -54,8 +50,6 @@ cp data/test.snmpwalk.example data/cisco_switch.snmpwalk
 ```
 
 ### 3. Run the Stack
-
-Spin up the entire environment using Docker Compose. The `--build` flag ensures your Go client is freshly compiled with any recent code changes.
 
 ```bash
 docker compose up --build
